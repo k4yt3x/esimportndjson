@@ -18,7 +18,7 @@ from elasticsearch import Elasticsearch
 
 def parse_arguments():
     parser = argparse.ArgumentParser(
-        prog="esimport",
+        prog="esimportndjson",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
 
