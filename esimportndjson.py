@@ -2,7 +2,7 @@
 # Name: Elasticsearch JSON Import
 # Author: K4YT3X
 # Date Created: March 18, 2021
-# Last Updated: March 18, 2021
+# Last Updated: March 25, 2021
 
 # local imports
 import argparse
@@ -111,7 +111,9 @@ if args.input.is_file():
 
 # if the input path is a directory
 elif args.input.is_dir():
-    files_to_import = [f for f in args.input.iterdir() if f.suffix == ".json"]
+    files_to_import = [
+        f for f in args.input.iterdir() if f.suffix == ".json" or f.suffix == ".ndjson"
+    ]
 
 else:
     print("Error: The input path is neither a file nor a directory", file=sys.stderr)
@@ -119,7 +121,9 @@ else:
 
 # for every NDJSON file in the current directory
 try:
-    print(f"Found {len(files_to_import)} files to import in total")
+    print(
+        f"Found {len(files_to_import)} {'file' if len(files_to_import) == 1 else 'files'} to import in total"
+    )
     for ndjson_file in files_to_import:
 
         # suppress all Elasticsearch warnings
