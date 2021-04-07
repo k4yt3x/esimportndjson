@@ -1,8 +1,10 @@
 #!/usr/bin/python3
-# Name: Elasticsearch JSON Import
-# Author: K4YT3X
-# Date Created: March 18, 2021
-# Last Updated: March 25, 2021
+"""
+Name: Elasticsearch JSON Import
+Author: K4YT3X
+Date Created: March 18, 2021
+Last Updated: March 25, 2021
+"""
 
 # local imports
 import argparse
